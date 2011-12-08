@@ -1,5 +1,6 @@
 CS50Projects::Application.routes.draw do
-  get "projects/new"
+  resources :projects
+  
 
     match '/about',   :to => 'pages#about'
     match '/new', :to => 'projects#new'
