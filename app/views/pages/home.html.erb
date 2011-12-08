@@ -12,6 +12,8 @@
     <li>
       <%= link_to project.title, project %>
       <%= "by #{project.author} (#{project.author_email})"%>
+      <%= link_to "delete", project, :method => :delete, :confirm => "Are you sure?",
+          :title => "Delete #{project.title}"%>
     </li>
   <% end %>
 </ul>

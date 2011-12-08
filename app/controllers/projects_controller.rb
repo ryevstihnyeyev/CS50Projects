@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
     @title = "New Project"
   end
   
+  
   def create
     @project = Project.new(params[:project])
     if @project.save
@@ -22,6 +23,13 @@ class ProjectsController < ApplicationController
       @title = "New Project"
       render 'new'
     end
+  end
+  
+  # Deletes a project.
+  def destroy 
+    Project.find(params[:id]).destroy
+    flash[:success] = "Project deleted."
+    redirect_to "/"
   end
 
 end
