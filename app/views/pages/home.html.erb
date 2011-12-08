@@ -3,6 +3,18 @@
 <p> This is the alternate CS50 Projects homepage. 
 	Visit the <a href="https://projects.cs50.net">original</a> website.
 </p>
+
+<h3> All Projects </h3>
+<!-- Use the pagination gem.-->
+
+<ul class="projects">
+  <% @projects.each do |project| %>
+    <li>
+      <%= link_to project.title, project %>
+      <%= "by #{project.author} (#{project.author_email})"%>
+    </li>
+  <% end %>
+</ul>
   
 	
 
